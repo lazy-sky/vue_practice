@@ -10,7 +10,7 @@
 <body>
   <div id="app">
     <div v-if="isShow">123</div>
-    <div v-else>456</div>
+    <div v-if="title">{{ title }}!!</div>
     <button @click="toggle">Toggle</button>
   </div>
   
@@ -18,13 +18,15 @@
     const MyComponent = {
       data() {
         return {
-          isShow: true
+          isShow: true,
+          title: ''
         }
       },
 
       methods: {
         toggle() {
           this.isShow = !this.isShow
+          this.title = 'Hello Vue'
         }
       }
     }
