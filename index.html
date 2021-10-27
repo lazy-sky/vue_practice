@@ -9,33 +9,24 @@
 </head>
 <body>
   <div id="app">
-    <button @click="pushFruit">Push</button>
-    <ul>
-      <li v-for="(fruit, index) in fruits" :key="fruit.id">
-        {{ fruit.name }} {{ index }}
-      </li>
-    </ul>
+    <input @input="typing($event); abc($event)">
   </div>
   
   <script>
     const MyComponent = {
       data() {
         return {
-          fruits: [
-            {id: '1', name: 'apple'},
-            {id: '2', name: 'banana'},
-            {id: '3', name: 'cherry'},
-            {id: '4', name: 'apple'},
-          ]
+          
         }
       },
 
       methods: {
-        pushFruit() {
-          this.fruits.push({
-            id: '5',
-            name: 'orange'
-          })
+        typing(event) {
+          console.log(event)
+        },
+
+        abc(event) {
+          console.log('abc event:', event)
         }
       }
     }
