@@ -9,24 +9,25 @@
 </head>
 <body>
   <div id="app">
-    <div v-if="isShow">123</div>
-    <div v-if="title">{{ title }}!!</div>
     <button @click="toggle">Toggle</button>
+    <!-- 개발자 도구 요소 창 확인, 비교 -->
+    <!-- v-if는 초기 렌더링 비용이 낮다. 토글 비용이 높다. -->
+    <!-- v-show는 초기 렌더링 비용이 높다. 토글 비용이 낮다. -->
+    <div v-if="isShow">123</div>
+    <div v-show="isShow">123</div>
   </div>
   
   <script>
     const MyComponent = {
       data() {
         return {
-          isShow: true,
-          title: ''
+          isShow: false
         }
       },
 
       methods: {
         toggle() {
           this.isShow = !this.isShow
-          this.title = 'Hello Vue'
         }
       }
     }
