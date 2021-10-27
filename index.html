@@ -11,8 +11,8 @@
   <div id="app">
     <button @click="pushFruit('orange')">Push</button>
     <ul>
-      <li v-for="fruit in fruits">
-        {{ fruit }}
+      <li v-for="(fruit, index) in fruits">
+        {{ fruit }} {{ index }}
       </li>
     </ul>
   </div>
