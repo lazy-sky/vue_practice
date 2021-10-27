@@ -9,26 +9,23 @@
 </head>
 <body>
   <div id="app">
-    <button @click="toggle">Toggle</button>
-    <!-- 개발자 도구 요소 창 확인, 비교 -->
-    <!-- v-if는 초기 렌더링 비용이 낮다. 토글 비용이 높다. -->
-    <!-- v-show는 초기 렌더링 비용이 높다. 토글 비용이 낮다. -->
-    <div v-if="isShow">123</div>
-    <div v-show="isShow">123</div>
+    <ul>
+      <li v-for="fruit in fruits">
+        {{ fruit }}
+      </li>
+    </ul>
   </div>
   
   <script>
     const MyComponent = {
       data() {
         return {
-          isShow: false
+          fruits: ['apple', 'banana', 'cherry']
         }
       },
 
       methods: {
-        toggle() {
-          this.isShow = !this.isShow
-        }
+        
       }
     }
 
