@@ -9,7 +9,11 @@
 </head>
 <body>
   <div id="app">
-    <div :style="`color: ${count > 3 ? 'red' : 'inherit'};`">{{ count }} / {{ double }}</div>
+    <!-- <div :style="`color: ${count > 3 ? 'red' : 'inherit'}; font-size: ${double > 10 ? '30px' : '16px'};`">{{ count }} / {{ double }}</div> -->
+    <div :style="{
+      color: count > 3 ? 'red' : 'inherit',
+      fontSize: double > 10 ? '30px' : '16px'
+    }">{{ count }} / {{ double }}</div>
     <button @click="increase">Increase</button>
   </div>
   
