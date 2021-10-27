@@ -9,15 +9,23 @@
 </head>
 <body>
   <div id="app">
-    <div>{{ count }}</div>
+    <div>{{ count }} / {{ double }}</div>
     <button @click="increase">Increase</button>
   </div>
   
   <script>
     const MyComponent = {
+      // 데이터
       data() {
         return {
-          count: 0
+          count: 0,
+        }
+      },
+
+      // 계산된 데이터
+      computed: {
+        double() {
+          return this.count * 2
         }
       },
 
