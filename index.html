@@ -9,8 +9,8 @@
 </head>
 <body>
   <div id="app">
-    <div ref="sky">{{ counter }}</div>
-    <!--' @'는 'v-on:'의 줄임말 -->
+    <!-- ':' 는 'v-bind:'의 줄임말 -->
+    <div :style="`color: ${color}`">{{ counter }}</div>
     <button @click="counter += 1">Increase</button>
     <button @click="counter -= 1">Decrease</button>
   </div>
@@ -20,27 +20,10 @@
       // 데이터 객체는 함수로 만들어야 한다.
       data() {
         return {
-          counter: 0
+          counter: 0,
+          color: 'red'
         }
       },
-
-      beforeCreate() {
-        console.log(this.counter)
-      },
-
-      created() {
-        console.log(this.counter)
-        console.log(this.$refs.sky)
-      },
-
-      beforeMount() {
-        console.log(this.counter)
-      },
-
-      mounted() {
-        console.log(this.counter)
-        console.log(this.$refs.sky)
-      }
     })
 
     app.mount('#app')
