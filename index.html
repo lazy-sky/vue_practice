@@ -9,7 +9,7 @@
 </head>
 <body>
   <div id="app">
-    <input @input="typing($event); abc($event)">
+    <input @input.prevent="typing">
   </div>
   
   <script>
@@ -22,11 +22,8 @@
 
       methods: {
         typing(event) {
+          // event.preventDefault()
           console.log(event)
-        },
-
-        abc(event) {
-          console.log('abc event:', event)
         }
       }
     }
