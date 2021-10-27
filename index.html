@@ -10,6 +10,9 @@
 <body>
   <div id="app">
     <div>{{ counter }}</div>
+    <!--' @'는 'v-on:'의 줄임말 -->
+    <button @click="counter += 1">Increase</button>
+    <button @click="counter -= 1">Decrease</button>
   </div>
   
   <script>
