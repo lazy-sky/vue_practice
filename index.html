@@ -9,6 +9,7 @@
 </head>
 <body>
   <div id="app">
+    <button @click="pushFruit('orange')">Push</button>
     <ul>
       <li v-for="fruit in fruits">
         {{ fruit }}
@@ -25,7 +26,9 @@
       },
 
       methods: {
-        
+        pushFruit(fruit) {
+          this.fruits.push(fruit)
+        }
       }
     }
 
