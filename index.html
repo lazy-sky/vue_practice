@@ -9,7 +9,7 @@
 </head>
 <body>
   <div id="app">
-    <div>{{ counter }}</div>
+    <div ref="sky">{{ counter }}</div>
     <!--' @'는 'v-on:'의 줄임말 -->
     <button @click="counter += 1">Increase</button>
     <button @click="counter -= 1">Decrease</button>
@@ -22,6 +22,24 @@
         return {
           counter: 0
         }
+      },
+
+      beforeCreate() {
+        console.log(this.counter)
+      },
+
+      created() {
+        console.log(this.counter)
+        console.log(this.$refs.sky)
+      },
+
+      beforeMount() {
+        console.log(this.counter)
+      },
+
+      mounted() {
+        console.log(this.counter)
+        console.log(this.$refs.sky)
       }
     })
 
