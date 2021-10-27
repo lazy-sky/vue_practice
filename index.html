@@ -9,8 +9,7 @@
 </head>
 <body>
   <div id="app">
-    <!-- 같은 결과가 나오지만 캐싱되지 않는다. 최적화를 위해 computed 개념을 이용하는 것이 더 바람직하다. -->
-    <div>{{ count }} / {{ double }}</div>
+    <div :style="`color: ${count > 3 ? 'red' : 'inherit'};`">{{ count }} / {{ double }}</div>
     <button @click="increase">Increase</button>
   </div>
   
