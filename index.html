@@ -8,8 +8,25 @@
   <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
+  <style>
+    .parent {
+      width: 200px;
+      height: 200px;
+      padding: 30px;
+      background-color: royalblue;
+    }
+
+    .child {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+    }
+  </style>
+
   <div id="app">
-    <input @input.prevent="typing">
+    <div class="parent" @click.self="handler">
+      <div class="child" ></div>
+    </div>
   </div>
   
   <script>
@@ -21,8 +38,7 @@
       },
 
       methods: {
-        typing(event) {
-          // event.preventDefault()
+        handler(event) {
           console.log(event)
         }
       }
