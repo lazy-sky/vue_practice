@@ -8,37 +8,14 @@
   <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
-  <style>
-    .parent {
-      width: 200px;
-      height: 200px;
-      padding: 30px;
-      background-color: royalblue;
-    }
-
-    .child {
-      width: 100px;
-      height: 100px;
-      background-color: orange;
-    }
-  </style>
-
   <div id="app">
-    <div class="parent" @click.self="handler">
-      <div class="child" ></div>
-    </div>
+    <input type="text" @keyup.enter="typing">
   </div>
   
   <script>
     const MyComponent = {
-      data() {
-        return {
-          
-        }
-      },
-
       methods: {
-        handler(event) {
+        typing(event) {
           console.log(event)
         }
       }
