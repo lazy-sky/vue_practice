@@ -9,8 +9,8 @@
 </head>
 <body>
   <div id="app">
-    <input :value="title" type="text" @input="title = $event.target.value"/>
-    <div>{{ title }}</div>
+    <textarea v-model="title" ></textarea>
+    <pre>{{ title }}</pre>
   </div>
   
   <script>
