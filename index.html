@@ -9,7 +9,7 @@
 </head>
 <body>
   <div id="app">
-    <input v-model="title" type="text" />
+    <input :value="title" type="text" @input="title = $event.target.value"/>
     <div>{{ title }}</div>
   </div>
   
