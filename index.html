@@ -9,15 +9,15 @@
 </head>
 <body>
   <div id="app">
-    <textarea v-model="title" ></textarea>
-    <pre>{{ title }}</pre>
+    <input v-model.lazy="title">
+    <div>{{ title }}</div>
   </div>
   
   <script>
     const MyComponent = {
       data() {
         return {
-          title: 'Hello Vue'
+          title: ''
         }
       }
     }
