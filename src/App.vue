@@ -1,6 +1,7 @@
 <template>
   <h1>{{ message }}</h1>
-  <TextField />
+  <TextField message="SKY" :count="count"/>
+  <button @click="count += 1">Increase</button>
 </template>
 
 <script>
@@ -13,7 +14,8 @@ export default {
 
   data () {
     return {
-      message: 'Hello Vue SFC!'
+      message: 'Hello Vue SFC!',
+      count: 7
     }
   }
 }

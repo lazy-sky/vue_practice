@@ -1,12 +1,20 @@
 <template>
-  <input type="text" v-model="message" />
+  <input type="text" :value="message" />
+  <div>{{ count }}</div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      message: ''
+  props: {
+    message: {
+      type: String,
+      default: ''
+    },
+
+    count: {
+      type: Number,
+      default: 0,
+      required: true
     }
   }
 }
