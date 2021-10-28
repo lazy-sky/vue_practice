@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = (env, options) => {
   console.log(env, options)
@@ -21,6 +22,10 @@ module.exports = (env, options) => {
     module: {
       rules: [
         {
+          test: /\.vue$/,
+          use: 'vue-loader'
+        },
+        {
           test: /\.js$/,
           exclude: /node_modules/,
           use: 'babel-loader'
@@ -28,7 +33,7 @@ module.exports = (env, options) => {
         {
           test: /\.s?css$/,
           use: [
-            'style-loader',
+            'vue-style-loader',
             'css-loader',
             'postcss-loader',
             'sass-loader'
@@ -44,7 +49,8 @@ module.exports = (env, options) => {
         patterns: [
           { from: 'static' }
         ]
-      })
+      }),
+      new VueLoaderPlugin()
     ],
     // devServer: {
     //   port: 8080,
