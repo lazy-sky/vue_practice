@@ -1,4 +1,7 @@
-import { checkType } from '~/utils/checkType'
-import './scss/main.scss'
+import * as Vue from 'vue'
 
-console.log(checkType({}, 'Object')) // true
+import App from './App.vue'
+
+const app = Vue.createApp(App)
+
+app.mount('#app')
