@@ -9,14 +9,15 @@
 </head>
 <body>
   <div id="app">
-    <input type="text" @keyup.enter="typing">
+    <input v-model="title" type="text" />
+    <div>{{ title }}</div>
   </div>
   
   <script>
     const MyComponent = {
-      methods: {
-        typing(event) {
-          console.log(event)
+      data() {
+        return {
+          title: 'Hello Vue'
         }
       }
     }
