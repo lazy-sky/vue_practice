@@ -9,20 +9,35 @@
 </head>
 <body>
   <div id="app">
-    <input v-model.lazy="title">
-    <div>{{ title }}</div>
+    <text-field></text-field>
+    <text-field></text-field>
+    <text-field></text-field>
   </div>
   
   <script>
     const MyComponent = {
       data() {
         return {
-          title: ''
+          title: null
         }
       }
     }
 
+    const TextField = {
+      data() {
+        return {
+          message: ''
+        }
+      },
+
+      template: 
+      `<input v-model="message" />
+      <div>{{ message }} </div>`
+    }
+
     const app = Vue.createApp(MyComponent)
+
+    app.component('text-field', TextField)
 
     const vm = app.mount('#app')
   </script>
