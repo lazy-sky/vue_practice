@@ -1,8 +1,9 @@
 <template>
   <h1>{{ message }}</h1>
   <TextField
-    message="SKY"
+    message="message"
     :count="count"
+    @sky="message = $event"
   />
   <button @click="count += 1">
     Increase

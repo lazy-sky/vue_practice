@@ -2,6 +2,7 @@
   <input
     type="text"
     :value="message"
+    @input="$emit('sky', $event.target.value)"
   />
   <div>{{ count }}</div>
 </template>
