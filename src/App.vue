@@ -1,9 +1,8 @@
 <template>
   <h1>{{ message }}</h1>
   <TextField
-    :value="message"
+    v-model="message"
     :count="count"
-    @input="message = $event"
   />
   <button @click="count += 1">
     Increase

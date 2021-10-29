@@ -1,8 +1,8 @@
 <template>
   <input
     type="text"
-    :value="value"
-    @input="$emit('input', $event.target.value)"
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)"
   />
   <div>{{ count }}</div>
 </template>
@@ -10,7 +10,7 @@
 <script>
 export default {
   props: {
-    value: {
+    modelValue: {
       type: String,
       default: ''
     },
