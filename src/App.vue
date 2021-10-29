@@ -17,6 +17,8 @@
   >
     Decrease
   </TheButton>
+  
+  <TheButton />
   <button>Normal Button</button>
 </template>
 

@@ -5,7 +5,7 @@
       [size]: true,
     }"
   >
-    <slot></slot>
+    <slot>Default Name!</slot>
   </button>
 </template>
 
