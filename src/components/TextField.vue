@@ -2,7 +2,7 @@
   <input
     type="text"
     :value="message"
-  >
+  />
   <div>{{ count }}</div>
 </template>
 
