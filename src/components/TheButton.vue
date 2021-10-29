@@ -19,8 +19,8 @@ export default {
 }
 </script>
 
-<style>
-/* 일반 버튼 태그에도 영향을 주고 있다 */
+<style scoped>
+/* 유효 범위를 현재 컴포넌트로 조정 */
 button {
   background: none;
   background-color: gray;
