@@ -1,8 +1,8 @@
 <template>
   <input
     type="text"
-    :value="message"
-    @input="$emit('sky', $event.target.value)"
+    :value="value"
+    @input="$emit('input', $event.target.value)"
   />
   <div>{{ count }}</div>
 </template>
@@ -10,7 +10,7 @@
 <script>
 export default {
   props: {
-    message: {
+    value: {
       type: String,
       default: ''
     },
