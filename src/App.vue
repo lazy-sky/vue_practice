@@ -12,6 +12,7 @@
   </TheButton>
   <TheButton
     name="danger"
+    size="lg"
     @click="count -=1"
   >
     Decrease
