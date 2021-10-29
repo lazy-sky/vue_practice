@@ -1,7 +1,12 @@
 <template>
   <h1>{{ message }}</h1>
-  <TextField message="SKY" :count="count"/>
-  <button @click="count += 1">Increase</button>
+  <TextField
+    message="SKY"
+    :count="count"
+  />
+  <button @click="count += 1">
+    Increase
+  </button>
 </template>
 
 <script>
