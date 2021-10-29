@@ -20,7 +20,8 @@ export default {
       default: 0,
       required: true
     }
-  }
+  },
+  emits: ['update:modelValue']
 }
 </script>
 
