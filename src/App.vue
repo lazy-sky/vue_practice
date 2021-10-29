@@ -10,6 +10,13 @@
   >
     Increase
   </TheButton>
+  <TheButton
+    name="danger"
+    @click="count -=1"
+  >
+    Decrease
+  </TheButton>
+  <button>Normal Button</button>
 </template>
 
 <script>
