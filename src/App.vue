@@ -4,17 +4,22 @@
     v-model="message"
     :count="count"
   />
-  <button @click="count += 1">
+  <TheButton
+    name="primary"
+    @click="count +=1"
+  >
     Increase
-  </button>
+  </TheButton>
 </template>
 
 <script>
 import TextField from '~/components/TextField'
+import TheButton from '~/components/TheButton'
 
 export default {
   components: {
-    TextField
+    TextField,
+    TheButton
   },
 
   data () {
