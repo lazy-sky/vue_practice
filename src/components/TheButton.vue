@@ -7,6 +7,12 @@
   >
     <slot>Default Name!</slot>
   </button>
+  <slot
+    name="label"
+    :btnName="name"
+    :size="size"
+  >
+  </slot>
 </template>
 
 <script>

@@ -15,7 +15,12 @@
     size="lg"
     @click="count -=1"
   >
-    Decrease
+    <template #default>
+      New Button
+    </template>
+    <template #label="{ size, btnName }">
+      New Label / {{ size }} / {{ btnName }} 
+    </template>
   </TheButton>
   
   <TheButton />
