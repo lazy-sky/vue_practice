@@ -18,6 +18,11 @@ export default {
     return {
       message: 'Hello Vue'
     }
+  },
+
+  async mounted() {
+    const res = await this.$fetch('frozen')
+    console.log(res)
   }
 }
 </script>

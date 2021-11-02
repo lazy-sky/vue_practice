@@ -1,7 +1,11 @@
 <template>
-  <button type="butotn">
+  <button
+    type="button"
+    @click="log"
+  >
     <slot>
     </slot>
+    {{ sample }}
   </button>
 </template>
 
@@ -10,6 +14,10 @@ import sample from '~/mixins/sample'
 
 export default {
   mixins: [sample],
-  inheritAttrs: false
+  methods: {
+    log() {
+      console.log(this.sample)
+    }
+  }
 }
 </script>
