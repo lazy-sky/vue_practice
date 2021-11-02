@@ -5,7 +5,7 @@
   >
     <slot>
     </slot>
-    {{ sample }}
+    <div>{{ $store.state.sky }}</div>
   </button>
 </template>
 
