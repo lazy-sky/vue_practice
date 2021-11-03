@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters, mapActions } from 'vuex'
 
 export default {
   computed: {
@@ -15,15 +15,15 @@ export default {
       'msg'
     ]),
 
-    reversedMessage() {
-      return this.$store.getters['message/reversedMessage']
-    }
+    ...mapGetters('message', [
+      'reversedMessage'
+    ])
   },
 
   methods: {
-    updateMessage() {
-      this.$store.dispatch('message/updateMessage')
-    }
+    ...mapActions('message', [
+      'updateMessage'
+    ])
   }
 }
 </script>
