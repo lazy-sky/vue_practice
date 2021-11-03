@@ -3,33 +3,32 @@
     {{ message }}
   </h1>
   <h2>{{ reversedMessage }}</h2>
+  <input
+    v-model="message"
+    type="text"
+  />
 </template>
 
 <script>
-import {  mapGetters, mapActions } from 'vuex'
-
-function mapState(moduleName, stateNames) {
-  const res = {}
-
-  stateNames.forEach(name => {
-    res[name] = function () {
-      return this.$store.state[moduleName][name]
-    }
-  })
-
-  return res
-}
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   computed: {
-    ...mapState('message', [
-      'message',
-      'msg'
-    ]),
-
     ...mapGetters('message', [
       'reversedMessage'
-    ])
+    ]),
+
+    message: {
+      get() {
+        return this.$store.state.message.message
+      },
+
+      set(message) {
+        this.$store.commit('message/assignState', {
+          message
+        })
+      }
+    }
   },
 
   methods: {
