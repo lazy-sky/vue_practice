@@ -1,12 +1,18 @@
 <template>
   <h1>Movie page!</h1>
-  <h2>{{ $route.params.sky }}</h2>
+  <h2>{{ title }}</h2>
 </template>
 
 <script>
 import axios from 'axios'
 
 export default {
+  data() {
+    return {
+      title: ''
+    }
+  },
+
   created() {
     this.fetchMovie()  
   },
@@ -15,6 +21,7 @@ export default {
     async fetchMovie() {
       const { data } = await axios.get(`https://www.omdbapi.com/?apikey=7035c60c&i=${this.$route.params.sky}`)
       console.log(data)
+      this.title = data.Title
     }
   }
 }
