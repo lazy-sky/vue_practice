@@ -1,28 +1,26 @@
 <template>
-  <h1>{{ message }}</h1>
-  <HelloWorld class="active" />
-  <TheButton />
+  <h1 @click="updateMessage">
+    {{ message }}
+  </h1>
+  <h2>{{ reversedMessage }}</h2>
 </template>
 
 <script>
-import HelloWorld from '~/components/HelloWorld'
-import TheButton from '~/components/TheButton'
-
 export default {
-  components: {
-    HelloWorld,
-    TheButton
-  },
+  computed: {
+    message() {
+      return this.$store.state.message
+    },
 
-  data () {
-    return {
-      message: 'Hello Vue'
+    reversedMessage() {
+      return this.$store.getters.reversedMessage
     }
   },
 
-  async mounted() {
-    const res = await this.$fetch('frozen')
-    console.log(res)
+  methods: {
+    updateMessage() {
+      this.$store.dispatch('updateMessage')
+    }
   }
 }
 </script>

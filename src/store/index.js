@@ -14,7 +14,7 @@ export default createStore({
     },
 
     reversedMessage(state) {
-      return state.message.split('').reverse().join()
+      return state.message.split('').reverse().join('')
     }
   },
 
@@ -29,15 +29,10 @@ export default createStore({
 
   // 액션 메소드, 데이터 수정 권한 X, 비동기
   actions: {
-    increase({ state, commit }) {
+    updateMessage({commit}) {
       commit('assignState', {
-        count: state.count + 1,
-        message: 'Good~!'
+        message: 'Good Morning~'
       })
-    },
-
-    reverseMessage() {
-
     }
   }
 })
