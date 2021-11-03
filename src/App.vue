@@ -6,7 +6,19 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from 'vuex'
+import {  mapGetters, mapActions } from 'vuex'
+
+function mapState(moduleName, stateNames) {
+  const res = {}
+
+  stateNames.forEach(name => {
+    res[name] = function () {
+      return this.$store.state[moduleName][name]
+    }
+  })
+
+  return res
+}
 
 export default {
   computed: {
