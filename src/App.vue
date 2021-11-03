@@ -9,17 +9,17 @@
 export default {
   computed: {
     message() {
-      return this.$store.state.message
+      return this.$store.state.message.message
     },
 
     reversedMessage() {
-      return this.$store.getters.reversedMessage
+      return this.$store.getters['message/reversedMessage']
     }
   },
 
   methods: {
     updateMessage() {
-      this.$store.dispatch('updateMessage')
+      this.$store.dispatch('message/updateMessage')
     }
   }
 }
