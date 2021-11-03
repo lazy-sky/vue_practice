@@ -7,6 +7,7 @@
     v-model="message"
     type="text"
   />
+  <RouterView />
 </template>
 
 <script>
