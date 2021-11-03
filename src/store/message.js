@@ -1,10 +1,10 @@
 export default {
   namespaced: true,
-  
+
   // data
   state: () => ({
-    count: 0,
-    message: 'this is a message'
+    message: 'this is a message',
+    msg: 'this is a msg'
   }),
   
   // computed

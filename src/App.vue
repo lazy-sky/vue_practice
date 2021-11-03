@@ -6,11 +6,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   computed: {
-    message() {
-      return this.$store.state.message.message
-    },
+    ...mapState('message', [
+      'message',
+      'msg'
+    ]),
 
     reversedMessage() {
       return this.$store.getters['message/reversedMessage']
