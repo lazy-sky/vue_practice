@@ -1,6 +1,6 @@
 <template>
   <img
-    src="poster"
+    :src="poster"
     alt=""
   />
 </template>

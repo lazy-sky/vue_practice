@@ -2,8 +2,10 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from './Home'
 import About from './About'
 import Movie from './Movie'
+import MovieHeader from './MovieHeader'
 import MovieTitle from './MovieTitle'
 import MoviePoster from './MoviePoster'
+
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -23,7 +25,10 @@ export default createRouter({
         {
           name: 'MovieTitle',
           path: 'title',
-          component: MovieTitle
+          components: {
+            MovieHeader,
+            default: MovieTitle
+          }
         },
         {
           name: 'MoviePoster',
