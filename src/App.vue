@@ -1,10 +1,10 @@
 <template>
   <TheHeader />
-  <input
+  <!-- <input
     v-model="searchText"
     type="text"
     @keyup.enter="fetchMovies"
-  />
+  /> -->
   <div
     v-for="movie in movies"
     :key="movie.imdbID"

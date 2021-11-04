@@ -5,6 +5,7 @@ import Movie from './Movie'
 import MovieHeader from './MovieHeader'
 import MovieTitle from './MovieTitle'
 import MoviePoster from './MoviePoster'
+import SignIn from './SignIn'
 
 
 export default createRouter({
@@ -20,6 +21,10 @@ export default createRouter({
       meta: {
         auth: true
       }
+    },
+    {
+      path: '/signin',
+      component: SignIn
     },
     {
       path: '/movies/:sky',
