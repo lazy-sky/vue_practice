@@ -21,10 +21,12 @@ export default createRouter({
       component: Movie,
       children: [
         {
+          name: 'MovieTitle',
           path: 'title',
           component: MovieTitle
         },
         {
+          name: 'MoviePoster',
           path: 'poster',
           component: MoviePoster
         }
