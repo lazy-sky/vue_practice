@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import Home from './Home'
 import About from './About'
 import Movie from './Movie'
@@ -8,7 +8,7 @@ import MoviePoster from './MoviePoster'
 
 
 export default createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: [ // 페이지들
     {
       path: '/',
