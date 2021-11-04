@@ -21,6 +21,7 @@ export default createRouter({
     {
       path: '/movies/:sky',
       component: Movie,
+      redirect: { name: 'MovieTitle' },
       children: [
         {
           name: 'MovieTitle',
