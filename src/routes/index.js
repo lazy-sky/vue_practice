@@ -16,7 +16,10 @@ export default createRouter({
     },
     {
       path: '/about',
-      component: About
+      component: About,
+      meta: {
+        auth: true
+      }
     },
     {
       path: '/movies/:sky',
