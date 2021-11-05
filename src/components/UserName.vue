@@ -1,6 +1,7 @@
 <template>
   <h1>{{ user.name }} / {{ depth }}</h1>
   <template v-if="user.children && user.children.length">
+    <!-- 재귀 컴포넌트는 props에 등록하지 않는다 -->
     <UserName
       v-for="u in user.children"
       :key="u.id"
