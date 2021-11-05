@@ -1,10 +1,11 @@
 <template>
-  <h1>{{ user.name }}</h1>
+  <h1>{{ user.name }} / {{ depth }}</h1>
   <template v-if="user.children && user.children.length">
     <UserName
       v-for="u in user.children"
       :key="u.id"
       :user="u"
+      :depth="depth + 1"
     />
   </template>
 </template>
@@ -15,6 +16,10 @@ export default {
     user: {
       type: Object,
       default: () => ({})
+    },
+    depth: {
+      type: Number,
+      default: 1
     }
   }
 }
