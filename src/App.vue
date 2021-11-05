@@ -15,7 +15,6 @@
   <RouterView />
   <TheModal
     v-model="isShow"
-    persistent
   >
     <template #activator>
       <button

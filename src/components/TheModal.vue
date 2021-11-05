@@ -35,7 +35,23 @@ export default {
 
   emits: ['update:modelValue'],
 
+  watch: {
+    modelValue(newValue) {
+      if (newValue) {
+        window.addEventListener('keyup', this.escHandler)
+      } else {
+        window.removeEventListener('keyup', this.escHandler)
+      }
+    }
+  },
+
   methods: {
+    escHandler(event) {
+      if (event.key === 'Escape') {
+        this.offModal()
+      }
+    },
+
     offModal() {
       if (this.persistent) return
 
