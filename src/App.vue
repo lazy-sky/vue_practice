@@ -16,10 +16,10 @@
   <TheModal
     v-model="isShow"
   >
-    <template #activator>
+    <template #activator="{ attrs }">
       <button
         type="button"
-        @click="isShow = true"
+        v-bind="attrs"
       >
         On Modal!
       </button>

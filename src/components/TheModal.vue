@@ -1,5 +1,8 @@
 <template>
-  <slot name="activator">
+  <slot
+    name="activator"
+    :attrs="{ onclick:onModal }"
+  >
   </slot>
   <teleport to="body">
     <template v-if="modelValue">
@@ -52,10 +55,14 @@ export default {
       }
     },
 
+    onModal() {
+      this.$emit('update:modelValue', true)
+    },
+
     offModal() {
       if (this.persistent) return
 
-      this.$emit('update:modelValue')
+      this.$emit('update:modelValue', false)
     }
   }
 }
