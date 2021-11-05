@@ -6,13 +6,15 @@ import MovieHeader from './MovieHeader'
 import MovieTitle from './MovieTitle'
 import MoviePoster from './MoviePoster'
 import SignIn from './SignIn'
+import NotFound from './NotFound'
 
 
 export default createRouter({
   history: createWebHistory(),
-  scrollBehavior: () => {
-    return { top: 0, left: 0 }
-  },
+  scrollBehavior: () => ({
+    top: 0, 
+    left: 0
+  }),
   routes: [ // 페이지들
     {
       path: '/',
@@ -48,6 +50,10 @@ export default createRouter({
           component: MoviePoster
         }
       ]
+    },
+    {
+      path: '/:sky(.*)',
+      component: NotFound
     }
   ]
 })
