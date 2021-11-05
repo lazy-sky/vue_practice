@@ -13,6 +13,28 @@
     {{ movie.Title }}
   </div>
   <RouterView />
+  <TheModal
+    v-model="isShow"
+    persistent
+  >
+    <template #activator>
+      <button
+        type="button"
+        @click="isShow = true"
+      >
+        On Modal!
+      </button>
+    </template>
+    <template #default>
+      <h1>Hello Modal!</h1>
+      <button
+        type="button"
+        @click="isShow=false"
+      >
+        Close
+      </button>
+    </template>
+  </TheModal>
   <UserName
     v-for="user in users"
     :key="user.id"
@@ -36,7 +58,8 @@ export default {
     return {
       searchText: '',
       movies: [],
-      users: names
+      users: names,
+      isShow: false
     }
   },
 
