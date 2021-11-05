@@ -16,7 +16,7 @@
   <UserName
     v-for="user in users"
     :key="user.id"
-    :username="user.name"
+    :user="user"
   />
 </template>
 

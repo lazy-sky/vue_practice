@@ -1,13 +1,20 @@
 <template>
-  <h1>{{ username }}</h1>
+  <h1>{{ user.name }}</h1>
+  <template v-if="user.children && user.children.length">
+    <UserName
+      v-for="u in user.children"
+      :key="u.id"
+      :user="u"
+    />
+  </template>
 </template>
 
 <script>
 export default {
   props: {
-    username: {
-      type: String,
-      default: ''
+    user: {
+      type: Object,
+      default: () => ({})
     }
   }
 }
