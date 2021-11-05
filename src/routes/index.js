@@ -10,6 +10,9 @@ import SignIn from './SignIn'
 
 export default createRouter({
   history: createWebHistory(),
+  scrollBehavior: () => {
+    return { top: 0, left: 0 }
+  },
   routes: [ // 페이지들
     {
       path: '/',
