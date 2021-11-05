@@ -4,6 +4,6 @@
 
 <style lang="scss" scoped>
 h1 {
-  height: 3000px;
+  color: $color-primary;
 }
 </style>
