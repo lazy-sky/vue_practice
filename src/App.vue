@@ -13,22 +13,35 @@
     {{ movie.Title }}
   </div>
   <RouterView />
+  <UserName
+    v-for="user in users"
+    :key="user.id"
+    :username="user.name"
+  />
 </template>
 
 <script>
 import axios from 'axios'
 import TheHeader from '~/components/TheHeader'
+import UserName from '~/components/UserName'
+import names from '~/data/names.json'
 
 export default {
   components: {
-    TheHeader
+    TheHeader,
+    UserName
   },
 
   data() {
     return {
       searchText: '',
-      movies: []
+      movies: [],
+      users: names
     }
+  },
+
+  mounted() {
+
   },
 
   methods: {
