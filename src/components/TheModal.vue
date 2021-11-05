@@ -1,20 +1,22 @@
 <template>
   <slot name="activator">
   </slot>
-  <template v-if="modelValue">
-    <div
-      class="modal"
-      @click="offModal"
-    >
+  <teleport to="body">
+    <template v-if="modelValue">
       <div
-        class="modal-box"
-        @click.stop="modelValue"
+        class="modal"
+        @click="offModal"
       >
-        <slot>
-        </slot>
+        <div
+          class="modal-box"
+          @click.stop="modelValue"
+        >
+          <slot>
+          </slot>
+        </div>
       </div>
-    </div>
-  </template>
+    </template>
+  </teleport>
 </template>
 
 <script>
