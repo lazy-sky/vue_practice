@@ -39,6 +39,7 @@ module.exports = (env, options) => {
             {
               loader: 'sass-loader',
               options: {
+                // Required: `<style lang="scss">`
                 additionalData: '@import "~/scss/main";'
               }
             }
